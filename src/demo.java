@@ -99,15 +99,39 @@ public class demo{
 
  */
         while (1==1) {
+            System.out.println("\nBan can giup gi?");
+            System.out.println("1. Tinh chu vi hinh tron.");
+            System.out.println("2. Tinh chu vi hinh chu nhat.");
+            System.out.println("3. Tinh chu vi hinh tam giac.");
+            System.out.println("0. Thoat khoi chuong trinh");
             System.out.println("Nhap lua chon cua ban");
             int choose = scanner.nextInt();
-
             switch (choose){
                 case 1:
                     Circle1 tron = new Circle1();
                     System.out.println("Nhap ban kinh: ");
                     tron.setBan_kinh1(scanner.nextInt());
                     tron.chu_vi1();
+                    break;
+
+                case 2:
+                    Triangle1 HCN = new Triangle1();
+                    System.out.println("Nhap chieu dai: ");
+                    HCN.setDai1(scanner.nextInt());
+                    System.out.println("Nhap chieu rong: ");
+                    HCN.setRong1(scanner.nextInt());
+                    HCN.chu_vi1();
+                    break;
+
+                case 3:
+                    Rectangle1 tam_giac = new Rectangle1();
+                    System.out.println("Nhap canh cua tam giac: ");
+                    tam_giac.setCanh11(scanner.nextInt());
+                    System.out.println("Nhap canh cua tam giac: ");
+                    tam_giac.setCanh12(scanner.nextInt());
+                    System.out.println("Nhap canh cua tam giac: ");
+                    tam_giac.setCanh13(scanner.nextInt());
+                    tam_giac.chu_vi1();
                     break;
                 case 0:
                     System.out.println("Bye bye");
