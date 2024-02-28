@@ -84,30 +84,31 @@ public class Shape{
             System.out.println("Nhap lua chon cua ban");
             Scanner myObj = new Scanner(System.in);
             int choose = myObj.nextInt();
+            Scanner myObj1 = new Scanner(System.in);
             switch (choose)
             {
                 case 1:
                     Circle myCircle = new Circle();
                     System.out.println("Nhap ban kinh hinh tron: ");
-                    myCircle.setBan_kinh(myObj.nextInt());
+                    myCircle.setBan_kinh(myObj1.nextInt());
                     myCircle.chu_vi();
                     break;
                 case 2:
                     Rectangle myRectangle = new Rectangle();
                     System.out.println("Nhap canh cua tam giac: ");
-                    myRectangle.setCanh1(myObj.nextInt());
+                    myRectangle.setCanh1(myObj1.nextInt());
                     System.out.println("Nhap canh cua tam giac: ");
-                    myRectangle.setCanh2(myObj.nextInt());
+                    myRectangle.setCanh2(myObj1.nextInt());
                     System.out.println("Nhap canh cua tam giac: ");
-                    myRectangle.setCanh3(myObj.nextInt());
+                    myRectangle.setCanh3(myObj1.nextInt());
                     myRectangle.chu_vi();
                     break;
                 case 3:
                     Triangle myTriangle = new Triangle();
                     System.out.println("Nhap chieu dai: ");
-                    myTriangle.setDai(myObj.nextInt());
+                    myTriangle.setDai(myObj1.nextInt());
                     System.out.println("Nhap chieu rong: ");
-                    myTriangle.setRong(myObj.nextInt());
+                    myTriangle.setRong(myObj1.nextInt());
                     myTriangle.chu_vi();
                     break;
                 case 0:

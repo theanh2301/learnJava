@@ -74,9 +74,10 @@ class Rectangle1 implements demo1 {
 // -------------------------------------------------------------------------
 public class demo{
     public static void main(String[] args){
+        Scanner scanner = new Scanner(System.in);
+/*
         Circle1 tron = new Circle1();
         System.out.println("Nhap ban kinh: ");
-        Scanner scanner = new Scanner(System.in);
         tron.setBan_kinh1(scanner.nextInt());
         tron.chu_vi1();
 
@@ -95,5 +96,25 @@ public class demo{
         System.out.println("Nhap canh cua tam giac: ");
         tam_giac.setCanh13(scanner.nextInt());
         tam_giac.chu_vi1();
+
+ */
+        while (1==1) {
+            System.out.println("Nhap lua chon cua ban");
+            int choose = scanner.nextInt();
+
+            switch (choose){
+                case 1:
+                    Circle1 tron = new Circle1();
+                    System.out.println("Nhap ban kinh: ");
+                    tron.setBan_kinh1(scanner.nextInt());
+                    tron.chu_vi1();
+                    break;
+                case 0:
+                    System.out.println("Bye bye");
+                    System.exit(0);
+                default:
+                    System.out.println("Nhap sai, nhap lai: ");
+            }
+        }
     }
 }
