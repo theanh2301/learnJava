@@ -98,7 +98,7 @@ public class demo{
         tam_giac.chu_vi1();
 
  */
-        while (1==1) {
+        while (true) {
             System.out.println("\nBan can giup gi?");
             System.out.println("1. Tinh chu vi hinh tron.");
             System.out.println("2. Tinh chu vi hinh chu nhat.");
