@@ -1,8 +1,10 @@
-package root;
-import root.model.*;
+import model.Circle;
+import model.Rectangle;
+import model.Triangle;
+
 import java.util.Scanner;
 
-public class Main{
+public class Main {
     public static void main(String[] args) {
         while (true) {
             System.out.println("\nBan can giup gi?");
@@ -15,8 +17,7 @@ public class Main{
             int choose = myObj.nextInt();
             Scanner myObj1 = new Scanner(System.in);
 
-switch (choose)
-            {
+            switch (choose) {
                 case 1:
                     Circle myCircle = new Circle();
                     System.out.println("Nhap ban kinh hinh tron: ");

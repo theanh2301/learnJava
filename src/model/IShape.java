@@ -1,7 +1,7 @@
-package root.model;
+package model;
 
-interface Shape {
-    public void Chu_vi();
+interface IShape {
+    void Chu_vi();
 }
 
 // -----------------------------------------------------------------------

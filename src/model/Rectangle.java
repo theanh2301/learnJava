@@ -1,16 +1,20 @@
-package root.model;
+package model;
 
-public class Rectangle implements Shape{
+public class Rectangle implements IShape {
     int dai, rong;
+
     public int getDai() {
         return dai;
     }
-    public int getRong() {
-        return rong;
-    }
+
     public void setDai(int dai) {
         this.dai = dai;
     }
+
+    public int getRong() {
+        return rong;
+    }
+
     public void setRong(int rong) {
         this.rong = rong;
     }
