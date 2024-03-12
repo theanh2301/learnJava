@@ -9,9 +9,6 @@ public class VehicleManagementMain {
     public static void main(String[] args) {
         VehicleManagement vehicleManagement = new VehicleManagement();
 
-        Vehicle newCar = new Car("Car 1", "Model 1", "Engine 1");
-        Vehicle newBicycle = new Bicycle("Bike 1", "Model 1", "Engine 1");
-        Vehicle newMotoBike = new Motorbike("Motor 1", "Model 1", "Engine 1");
 
         while (true) {
             System.out.println("\nCan I help you?");
@@ -31,113 +28,139 @@ public class VehicleManagementMain {
                 case 2:
                     System.out.print("Which vehicle do you want to add? (Car, Bicycle, Motorbike: ");
                     v = myObj.next();
-                    if (v.equals("Car")) {
-                        System.out.print("Enter the length of the list: ");
-                        int n = myObj.nextInt();
-                        for (int i = 0; i <= n - 1; i++) {
-                            System.out.print("Enter name: ");
-                            newCar.setName(myObj.next());
-                            System.out.print("Enter model: ");
-                            newCar.setModel(myObj.next());
-                            System.out.print("Enter engine: ");
-                            newCar.setEngine(myObj.next());
-                            newCar.run();
-                            vehicleManagement.addVehicle(newCar);
+                    switch (v) {
+                        case "Car", "car" -> {
+                            System.out.print("Enter the length of the list: ");
+                            int n = myObj.nextInt();
+
+                            for (int i = 0; i <= n - 1; i++) {
+                                Vehicle newCar = new Car("Car 1", "Model 1", "Engine 1");
+                                System.out.print("Enter name: ");
+                                newCar.setName(myObj.next());
+                                System.out.print("Enter model: ");
+                                newCar.setModel(myObj.next());
+                                System.out.print("Enter engine: ");
+                                newCar.setEngine(myObj.next());
+                                newCar.run();
+                                vehicleManagement.addVehicle(newCar);
+                            }
                         }
-                    } else if (v.equals("Bicycle")) {
-                        System.out.print("Enter the length of the list: ");
-                        int n = myObj.nextInt();
-                        for (int i = 0; i <= n - 1; i++) {
-                            System.out.print("Enter name: ");
-                            newBicycle.setName(myObj.next());
-                            System.out.print("Enter model: ");
-                            newBicycle.setModel(myObj.next());
-                            System.out.print("Enter engine: ");
-                            newBicycle.setEngine(myObj.next());
-                            newBicycle.run();
-                            vehicleManagement.addVehicle(newBicycle);
+                        case "Bicycle", "bicycle" -> {
+                            System.out.print("Enter the length of the list: ");
+                            int n = myObj.nextInt();
+
+                            for (int i = 0; i <= n - 1; i++) {
+                                Vehicle newBicycle = new Bicycle("Bike 1", "Model 1", "Engine 1");
+                                System.out.print("Enter name: ");
+                                newBicycle.setName(myObj.next());
+                                System.out.print("Enter model: ");
+                                newBicycle.setModel(myObj.next());
+                                System.out.print("Enter engine: ");
+                                newBicycle.setEngine(myObj.next());
+                                newBicycle.run();
+                                vehicleManagement.addVehicle(newBicycle);
+                            }
                         }
-                    } else if (v.equals("Motorbike")) {
-                        System.out.print("Enter the length of the list: ");
-                        int n = myObj.nextInt();
-                        for (int i = 0; i <= n - 1; i++) {
-                            System.out.print("Enter name: ");
-                            newMotoBike.setName(myObj.next());
-                            System.out.print("Enter model: ");
-                            newMotoBike.setModel(myObj.next());
-                            System.out.print("Enter engine: ");
-                            newMotoBike.setEngine(myObj.next());
-                            newMotoBike.run();
-                            vehicleManagement.addVehicle(newMotoBike);
+                        case "Motorbike", "motorbike" -> {
+                            System.out.print("Enter the length of the list: ");
+                            int n = myObj.nextInt();
+
+                            for (int i = 0; i <= n - 1; i++) {
+                                Vehicle newMotoBike = new Motorbike("Motor 1", "Model 1", "Engine 1");
+                                System.out.print("Enter name: ");
+                                newMotoBike.setName(myObj.next());
+                                System.out.print("Enter model: ");
+                                newMotoBike.setModel(myObj.next());
+                                System.out.print("Enter engine: ");
+                                newMotoBike.setEngine(myObj.next());
+                                newMotoBike.run();
+                                vehicleManagement.addVehicle(newMotoBike);
+                            }
                         }
                     }
                     break;
                 case 3:
                     System.out.print("Which vehicle do you want to change? (Car, Bicycle, Motorbike: ");
                     v = myObj.next();
-                    if (v.equals("Car")) {
-                        System.out.println("Enter vehicle you want to change: ");
-                        m = myObj.next();
-                        if (m.equals(newCar.getName())) {
-                            vehicleManagement.removeVehicle(newCar);
-                            System.out.print("Enter name: ");
-                            newCar.setName(myObj.next());
-                            System.out.print("Enter model: ");
-                            newCar.setModel(myObj.next());
-                            System.out.print("Enter engine: ");
-                            newCar.setEngine(myObj.next());
-                            vehicleManagement.addVehicle(newCar);
-                        } else {
-                            System.out.println("False");
-                        }
-                    } else if (v.equals("Bicycle")) {
-                        System.out.println("Enter vehicle you want to change: ");
-                        m = myObj.next();
-                        if (m.equals(newBicycle.getName())) {
-                            vehicleManagement.removeVehicle(newBicycle);
-                            System.out.print("Enter name: ");
-                            newBicycle.setName(myObj.next());
-                            System.out.print("Enter model: ");
-                            newBicycle.setModel(myObj.next());
-                            System.out.print("Enter engine: ");
-                            newBicycle.setEngine(myObj.next());
-                            vehicleManagement.addVehicle(newBicycle);
-                        } else {
-                            System.out.println("False");
-                        }
+                    switch (v) {
+                        case "Car", "car" -> {
+                            Vehicle newCar = new Car("Car 1", "Model 1", "Engine 1");
+                            System.out.println("Enter vehicle you want to change: ");
+                            m = myObj.next();
 
-                    } else if (v.equals("Motorbike")) {
-                        System.out.println("Enter vehicle you want to change: ");
-                        m = myObj.next();
-                        if (m.equals(newMotoBike.getName())) {
-                            vehicleManagement.removeVehicle(newMotoBike);
-                            System.out.print("Enter name: ");
-                            newMotoBike.setName(myObj.next());
-                            System.out.print("Enter model: ");
-                            newMotoBike.setModel(myObj.next());
-                            System.out.print("Enter engine: ");
-                            newMotoBike.setEngine(myObj.next());
-                            vehicleManagement.addVehicle(newMotoBike);
-                        } else {
-                            System.out.println("False");
+                            if (m.equals(newCar.getName())) {
+                                vehicleManagement.removeVehicle(newCar);
+                                System.out.print("Enter name: ");
+                                newCar.setName(myObj.next());
+                                System.out.print("Enter model: ");
+                                newCar.setModel(myObj.next());
+                                System.out.print("Enter engine: ");
+                                newCar.setEngine(myObj.next());
+                                vehicleManagement.addVehicle(newCar);
+                            } else {
+                                System.out.println("False");
+                            }
+                        }
+                        case "Bicycle", "bicycle" -> {
+                            Vehicle newBicycle = new Bicycle("Bike 1", "Model 1", "Engine 1");
+                            System.out.println("Enter vehicle you want to change: ");
+                            m = myObj.next();
+
+                            if (m.equals(newBicycle.getName())) {
+                                vehicleManagement.removeVehicle(newBicycle);
+                                System.out.print("Enter name: ");
+                                newBicycle.setName(myObj.next());
+                                System.out.print("Enter model: ");
+                                newBicycle.setModel(myObj.next());
+                                System.out.print("Enter engine: ");
+                                newBicycle.setEngine(myObj.next());
+                                vehicleManagement.addVehicle(newBicycle);
+                            } else {
+                                System.out.println("False");
+                            }
+                        }
+                        case "Motorbike", "motorbike" -> {
+                            Vehicle newMotoBike = new Motorbike("Motor 1", "Model 1", "Engine 1");
+                            System.out.println("Enter vehicle you want to change: ");
+                            m = myObj.next();
+                            if (m.equals(newMotoBike.getName())) {
+                                vehicleManagement.removeVehicle(newMotoBike);
+                                System.out.print("Enter name: ");
+                                newMotoBike.setName(myObj.next());
+                                System.out.print("Enter model: ");
+                                newMotoBike.setModel(myObj.next());
+                                System.out.print("Enter engine: ");
+                                newMotoBike.setEngine(myObj.next());
+                                vehicleManagement.addVehicle(newMotoBike);
+                            } else {
+                                System.out.println("False");
+                            }
                         }
                     }
                     break;
                 case 4:
-                    System.out.print("Which vehicle do you want to add? (Car, Bicycle, Motorbike: ");
+                    System.out.print("Which vehicle do you want to remove? (Car, Bicycle, Motorbike: ");
                     v = myObj.next();
-                    if (v.equals("Car")) {
-                        System.out.print("\nEnter id or name of vehicle you want to move: ");
-                        vehicleManagement.set_n(myObj.next());
-                        vehicleManagement.removeList(newCar);
-                    } else if (v.equals("Bicycle")) {
-                        System.out.print("\nEnter id or name of vehicle you want to move: ");
-                        vehicleManagement.set_n(myObj.next());
-                        vehicleManagement.removeList(newBicycle);
-                    } else if (v.equals("Motorbike")) {
-                        System.out.print("\nEnter id or name of vehicle you want to move: ");
-                        vehicleManagement.set_n(myObj.next());
-                        vehicleManagement.removeList(newMotoBike);
+                    switch (v) {
+                        case "Car", "car" -> {
+                            Vehicle newCar = new Car("Car 1", "Model 1", "Engine 1");
+                            System.out.print("\nEnter id or name of vehicle you want to move: ");
+                            vehicleManagement.set_n(myObj.next());
+
+                            vehicleManagement.removeList(newCar);
+                        }
+                        case "Bicycle", "bicycle" -> {
+                            Vehicle newBicycle = new Bicycle("Bike 1", "Model 1", "Engine 1");
+                            System.out.print("\nEnter id or name of vehicle you want to move: ");
+                            vehicleManagement.set_n(myObj.next());
+                            vehicleManagement.removeList(newBicycle);
+                        }
+                        case "Motorbike", "motorbike" -> {
+                            Vehicle newMotoBike = new Motorbike("Motor 1", "Model 1", "Engine 1");
+                            System.out.print("\nEnter id or name of vehicle you want to move: ");
+                            vehicleManagement.set_n(myObj.next());
+                            vehicleManagement.removeList(newMotoBike);
+                        }
                     }
                     break;
                 case 0:

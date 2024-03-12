@@ -12,8 +12,8 @@ public abstract class Vehicle {
    protected String engine;
 
    public Vehicle () {
-      this.id = idVehicle;
-      this.id = Integer.valueOf(UUID.randomUUID().toString());
+      this.id = idVehicle ++;
+
    }
    public Vehicle (String name, String model, String engine) {
       this.name = name;
