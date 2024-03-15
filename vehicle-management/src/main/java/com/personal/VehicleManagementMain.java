@@ -146,7 +146,6 @@ public class VehicleManagementMain {
                             Vehicle newCar = new Car("Car 1", "Model 1", "Engine 1");
                             System.out.print("\nEnter id or name of vehicle you want to move: ");
                             vehicleManagement.set_n(myObj.next());
-
                             vehicleManagement.removeList(newCar);
                         }
                         case "Bicycle", "bicycle" -> {

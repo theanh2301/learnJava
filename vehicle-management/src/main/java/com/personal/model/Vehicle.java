@@ -1,28 +1,31 @@
 package main.java.com.personal.model;
 
 import java.util.Objects;
-import java.util.Scanner;
 import java.util.UUID;
 
+
 public abstract class Vehicle {
-   private static int idVehicle = 1;
-   protected Integer id;
+   private static Integer idVehicle = 0;
+   private String id;
    protected String name;
    protected String model;
    protected String engine;
 
-   public Vehicle () {
-      this.id = idVehicle ++;
+   protected Vehicle() {
 
    }
+
    public Vehicle (String name, String model, String engine) {
+      UUID uniqueId = UUID.randomUUID();
+      id = String.valueOf(uniqueId);
       this.name = name;
       this.model = model;
       this.engine = engine;
    }
 
-   public String getID() {
-      return id.toString();
+
+    public String getID() {
+      return id;
    }
    public String getName() {
       return name;
