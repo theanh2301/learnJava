@@ -43,7 +43,7 @@ public class VehicleManagement {
     }
     public void removeList (Vehicle vehicle) {
         if (n.equals(vehicle.name)) {
-            ds.remove(vehicle);
+            removeVehicle(vehicle);
         }
         else {
             System.out.println(n + " is not exit!");

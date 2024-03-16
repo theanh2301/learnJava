@@ -1,20 +1,108 @@
 package main.java.com.personal;
-import main.java.com.personal.model.Bicycle;
-import main.java.com.personal.model.Car;
-import main.java.com.personal.model.Vehicle;
-import main.java.com.personal.model.VehicleManagement;
+import main.java.com.personal.model.*;
 
+import java.util.Scanner;
 import java.util.UUID;
 public class demo {
+    public static Scanner myObj = new Scanner(System.in);
     public static void main(String[] args) {
         VehicleManagement vehicleManagement = new VehicleManagement();
-        Vehicle new1 = new Car("car 1", "model", "engine");
-        Vehicle new2 = new Bicycle("bike 1", "model", "engine");
-        vehicleManagement.addVehicle(new1);
-        vehicleManagement.addVehicle(new2);
-        System.out.println(new1.getID());
-        vehicleManagement.displayList();
-        UUID uniqueKey = UUID.randomUUID();
-        System.out.println(uniqueKey);
+        Vehicle newCar = new Car("Car 1", "Model 1", "Engine 1");
+
+
+        while (true) {
+            System.out.println("\nCan I help you?");
+            System.out.println("1. Print list.");
+            System.out.println("2. Add element for list.");
+            System.out.println("3. Change element for list.");
+            System.out.println("4. Remove element for list.");
+            System.out.println("0. Exit");
+            System.out.print("Your choice: ");
+            int choice = myObj.nextInt();
+            String v,m;
+            switch (choice) {
+                case 1:
+                    System.out.println("\nThe list has entered: ");
+                    vehicleManagement.displayList();
+                    break;
+                case 2:
+                    System.out.print("Which vehicle do you want to add? (Car, Bicycle, Motorbike: ");
+                    v = myObj.next();
+                    switch (v) {
+                        case "Car", "car" -> {
+                            System.out.print("Enter the length of the list: ");
+                            int n = myObj.nextInt();
+
+                            for (int i = 0; i <= n - 1; i++) {
+                                newCar = new Car("Car 1", "Model 1", "Engine 1");
+                                System.out.print("Enter name: ");
+                                newCar.setName(myObj.next());
+                                System.out.print("Enter model: ");
+                                newCar.setModel(myObj.next());
+                                System.out.print("Enter engine: ");
+                                newCar.setEngine(myObj.next());
+                                newCar.run();
+                                vehicleManagement.addVehicle(newCar);
+                            }
+                        }
+
+                    }
+                    break;
+                case 3:
+                    System.out.print("Which vehicle do you want to change? (Car, Bicycle, Motorbike: ");
+                    v = myObj.next();
+                    switch (v) {
+                        case "Car", "car" -> {
+
+                            System.out.print("Enter vehicle you want to change: ");
+                            m = myObj.next();
+
+                            if (m.equals(newCar.getName())) {
+                                vehicleManagement.removeVehicle(newCar);
+                                System.out.print("Enter name: ");
+                                newCar.setName(myObj.next());
+                                System.out.print("Enter model: ");
+                                newCar.setModel(myObj.next());
+                                System.out.print("Enter engine: ");
+                                newCar.setEngine(myObj.next());
+                                vehicleManagement.addVehicle(newCar);
+                            } else {
+                                System.out.println("False");
+                            }
+                        }
+
+                    }
+                    break;
+                case 4:
+                    System.out.print("Which vehicle do you want to remove? (Car, Bicycle, Motorbike: ");
+                    v = myObj.next();
+                    switch (v) {
+                        case "Car", "car" -> {
+
+                            System.out.print("\nEnter id or name of vehicle you want to move: ");
+                            String n = myObj.next();
+                            if (n.equals(newCar.getName())) {
+                                System.out.println("True");
+                                vehicleManagement.removeVehicle(newCar);
+                            }
+                            else {
+                                System.out.println("False");
+                            }
+                        }
+
+                    }
+                    break;
+                case 0:
+                    System.out.println("Bye bye.");
+                    System.exit(0);
+                default:
+                    System.out.println("Your choice  is invalid!");
+            }
+
+        }
+
+
+
+
     }
 }

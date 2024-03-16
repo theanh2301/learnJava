@@ -8,6 +8,9 @@ public class VehicleManagementMain {
 
     public static void main(String[] args) {
         VehicleManagement vehicleManagement = new VehicleManagement();
+        Vehicle newCar = new Car("Car 1", "Model 1", "Engine 1");
+        Vehicle newBicycle = new Car("Car 1", "Model 1", "Engine 1");
+        Vehicle newMotoBike = new Car("Car 1", "Model 1", "Engine 1");
 
 
         while (true) {
@@ -34,7 +37,7 @@ public class VehicleManagementMain {
                             int n = myObj.nextInt();
 
                             for (int i = 0; i <= n - 1; i++) {
-                                Vehicle newCar = new Car("Car 1", "Model 1", "Engine 1");
+                                newCar = new Car("Car 1", "Model 1", "Engine 1");
                                 System.out.print("Enter name: ");
                                 newCar.setName(myObj.next());
                                 System.out.print("Enter model: ");
@@ -50,7 +53,7 @@ public class VehicleManagementMain {
                             int n = myObj.nextInt();
 
                             for (int i = 0; i <= n - 1; i++) {
-                                Vehicle newBicycle = new Bicycle("Bike 1", "Model 1", "Engine 1");
+                                newBicycle = new Bicycle("Bike 1", "Model 1", "Engine 1");
                                 System.out.print("Enter name: ");
                                 newBicycle.setName(myObj.next());
                                 System.out.print("Enter model: ");
@@ -66,7 +69,7 @@ public class VehicleManagementMain {
                             int n = myObj.nextInt();
 
                             for (int i = 0; i <= n - 1; i++) {
-                                Vehicle newMotoBike = new Motorbike("Motor 1", "Model 1", "Engine 1");
+                                newMotoBike = new Motorbike("Motor 1", "Model 1", "Engine 1");
                                 System.out.print("Enter name: ");
                                 newMotoBike.setName(myObj.next());
                                 System.out.print("Enter model: ");
@@ -84,8 +87,8 @@ public class VehicleManagementMain {
                     v = myObj.next();
                     switch (v) {
                         case "Car", "car" -> {
-                            Vehicle newCar = new Car("Car 1", "Model 1", "Engine 1");
-                            System.out.println("Enter vehicle you want to change: ");
+
+                            System.out.print("Enter vehicle you want to change: ");
                             m = myObj.next();
 
                             if (m.equals(newCar.getName())) {
@@ -102,8 +105,8 @@ public class VehicleManagementMain {
                             }
                         }
                         case "Bicycle", "bicycle" -> {
-                            Vehicle newBicycle = new Bicycle("Bike 1", "Model 1", "Engine 1");
-                            System.out.println("Enter vehicle you want to change: ");
+
+                            System.out.print("Enter vehicle you want to change: ");
                             m = myObj.next();
 
                             if (m.equals(newBicycle.getName())) {
@@ -120,8 +123,8 @@ public class VehicleManagementMain {
                             }
                         }
                         case "Motorbike", "motorbike" -> {
-                            Vehicle newMotoBike = new Motorbike("Motor 1", "Model 1", "Engine 1");
-                            System.out.println("Enter vehicle you want to change: ");
+
+                            System.out.print("Enter vehicle you want to change: ");
                             m = myObj.next();
                             if (m.equals(newMotoBike.getName())) {
                                 vehicleManagement.removeVehicle(newMotoBike);
@@ -143,22 +146,40 @@ public class VehicleManagementMain {
                     v = myObj.next();
                     switch (v) {
                         case "Car", "car" -> {
-                            Vehicle newCar = new Car("Car 1", "Model 1", "Engine 1");
+
                             System.out.print("\nEnter id or name of vehicle you want to move: ");
-                            vehicleManagement.set_n(myObj.next());
-                            vehicleManagement.removeList(newCar);
+                            String n = myObj.next();
+                            if (n.equals(newCar.getName())) {
+                                System.out.println("True");
+                                vehicleManagement.removeVehicle(newCar);
+                            }
+                            else {
+                                System.out.println("False");
+                            }
                         }
                         case "Bicycle", "bicycle" -> {
-                            Vehicle newBicycle = new Bicycle("Bike 1", "Model 1", "Engine 1");
+
                             System.out.print("\nEnter id or name of vehicle you want to move: ");
-                            vehicleManagement.set_n(myObj.next());
-                            vehicleManagement.removeList(newBicycle);
+                            String n = myObj.next();
+                            if (n.equals(newBicycle.getName())) {
+                                System.out.println("True");
+                                vehicleManagement.removeVehicle(newBicycle);
+                            }
+                            else {
+                                System.out.println("False");
+                            }
                         }
                         case "Motorbike", "motorbike" -> {
-                            Vehicle newMotoBike = new Motorbike("Motor 1", "Model 1", "Engine 1");
+
                             System.out.print("\nEnter id or name of vehicle you want to move: ");
-                            vehicleManagement.set_n(myObj.next());
-                            vehicleManagement.removeList(newMotoBike);
+                            String n = myObj.next();
+                            if (n.equals(newMotoBike.getName())) {
+                                System.out.println("True");
+                                vehicleManagement.removeVehicle(newMotoBike);
+                            }
+                            else {
+                                System.out.println("False");
+                            }
                         }
                     }
                     break;
@@ -172,17 +193,7 @@ public class VehicleManagementMain {
         }
 
 
-//        String n = myObj.next();
-//        if (n.equals(newMotoBike.getID())) {
-//            vehicleManagement.removeVehicle(newMotoBike);
-//        }
-//        else if (n.equals(newMotoBike.getName())) {
-//            System.out.println("True");
-//            vehicleManagement.removeVehicle(newMotoBike);
-//        }
-//        else {
-//            System.out.println("False");
-//        }
+
 
     }
 }
