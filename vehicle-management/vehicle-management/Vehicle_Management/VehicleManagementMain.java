@@ -7,9 +7,9 @@ public class VehicleManagementMain {
 
     public static void main(String[] args) {
         VehicleManagement vehicleManagement = new VehicleManagement();
-        Vehicle newCar = new Car("Car 1", "Model 1", "Engine 1");
-        Vehicle newBicycle = new Car("Car 1", "Model 1", "Engine 1");
-        Vehicle newMotoBike = new Car("Car 1", "Model 1", "Engine 1");
+        // Vehicle newCar = new Car("Car 1", "Model 1", "Engine 1");
+        // Vehicle newBicycle = new Car("Car 1", "Model 1", "Engine 1");
+        // Vehicle newMotoBike = new Car("Car 1", "Model 1", "Engine 1");
 
 
         while (true) {
@@ -26,8 +26,8 @@ public class VehicleManagementMain {
             if (Character.isDigit(c)) {
                 int choice = Integer.parseInt(choices);
 
-            String v;
-            switch (choice) {
+                String v;
+                switch (choice) {
                 case 1:
                     System.out.println("\nThe list has entered: ");
                     vehicleManagement.displayList();
@@ -40,7 +40,7 @@ public class VehicleManagementMain {
                             int n = myObj.nextInt();
 
                             for (int i = 0; i < n; i++) {
-                                newCar = new Car("Car 1", "Model 1", "Engine 1");
+                                Vehicle newCar = new Car("Car 1", "Model 1", "Engine 1");
                                 System.out.print("Enter name: ");
                                 newCar.setName(myObj.next());
                                 System.out.print("Enter model: ");
@@ -55,7 +55,7 @@ public class VehicleManagementMain {
                             int n = myObj.nextInt();
 
                             for (int i = 0; i < n; i++) {
-                                newBicycle = new Bicycle("Bike 1", "Model 1", "Engine 1");
+                                Vehicle newBicycle = new Bicycle("Bike 1", "Model 1", "Engine 1");
                                 System.out.print("Enter name: ");
                                 newBicycle.setName(myObj.next());
                                 System.out.print("Enter model: ");
@@ -70,7 +70,7 @@ public class VehicleManagementMain {
                             int n = myObj.nextInt();
 
                             for (int i = 0; i < n; i++) {
-                                newMotoBike = new Motorbike("Motor 1", "Model 1", "Engine 1");
+                                Vehicle newMotoBike = new Motorbike("Motor 1", "Model 1", "Engine 1");
                                 System.out.print("Enter name: ");
                                 newMotoBike.setName(myObj.next());
                                 System.out.print("Enter model: ");
@@ -84,17 +84,16 @@ public class VehicleManagementMain {
                     
                     break;
                 case 3:
-                    System.out.print("Which vehicle do you want to change? (Car, Bicycle, Motorbike: ");
-                    v = myObj.next();
+                    System.out.print("Enter id or name of vehicle you want to change: ");
+                    v = myObj.nextLine();
                     vehicleManagement.changeList(v);
                    
                     break;
                 case 4:
-                    System.out.print("\nEnter id or name of vehicle you want to move: ");
-                    String n = myObj.next();
+                    System.out.print("\nEnter id or name of vehicle you want to remove: ");
+                    String n = myObj.nextLine();
                     vehicleManagement.removeList(n);
                     
-
                     break;
                 case 0:
                     System.out.println("Bye bye.");
