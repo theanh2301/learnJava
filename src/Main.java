@@ -9,7 +9,6 @@ public class Main {
 
         //Chọn giao diện máy chủ máy khách
 
-
         //Giao diện máy chủ
         System.out.println("-----Menu-----");
         System.out.println("1. Danh sách máy khách");
@@ -23,7 +22,6 @@ public class Main {
         System.out.println("9. Thêm đồ uống ");
         System.out.println("10. Hiển thị hóa đơn");
         System.out.println("0. Thoát");
-
 
         //Hiển thị danh sách máy khách -> chọn máy trống (nếu tất cả các máy đều hoạt động thì thông báo hết máy
 

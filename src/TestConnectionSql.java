@@ -1,26 +1,29 @@
-import com.microsoft.sqlserver.jdbc.SQLServerDataSource;
-import com.microsoft.sqlserver.jdbc.SQLServerException;
+import BusinessLogicLayer.TaiKhoanBLL;
+import model.TaiKhoan;
 
-import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.Scanner;
 
-public class TestConnectionSql {
-    public static void main(String[] args) {
-        SQLServerDataSource dataSource = new SQLServerDataSource();
-        dataSource.setUser("sa");
-        dataSource.setPassword("123");
-        dataSource.setServerName("DESKTOP-FOVB9DA");
-        dataSource.setPortNumber(1433);
-        dataSource.setDatabaseName("testConnection");
+class TesConnectionSql {
+    public static void main(String[] args) throws SQLException {
 
-        try(Connection connection = dataSource.getConnection()) {
-            System.out.println("Ket noi thanh cong");
-            System.out.println(connection.getCatalog());
-        } catch (SQLServerException e) {
-            throw new RuntimeException(e);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Nhập tên khách hàng: ");
+        String name = sc.nextLine();
+
+        TaiKhoanBLL taiKhoanBLL = new TaiKhoanBLL();
+        TaiKhoan taiKhoan = taiKhoanBLL.getTaiKhoanByName(name);
+
+        System.out.println("Tên Khách Hàng: " + name);
+        System.out.println("Tên tài khoản: " + taiKhoan.getTenTaiKhoan());
+        System.out.println("Mật Khẩu: " + taiKhoan.getMatKhau());
+
+        taiKhoanBLL.kiemTraTaiKhoan(taiKhoan);
+
+        /*taiKhoanBLL.getTable();
+        System.out.println("Tên Khách Hàng: " + taiKhoan.getTenKhachHang());
+        System.out.println("Tên tài khoản: " + taiKhoan.getTenTaiKhoan());
+        System.out.println("Mật Khẩu: " + taiKhoan.getMatKhau());*/
 
     }
 }
